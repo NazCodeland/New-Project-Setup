@@ -1,0 +1,5 @@
+# this prettierignore is not needed with the
+# current settings because only STAGED files are formatted.
+node_modules
+package-lock.json
+

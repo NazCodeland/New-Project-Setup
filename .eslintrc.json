@@ -1,0 +1,60 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "es6": true,
+    "node": true
+  },
+
+  "extends": ["eslint:recommended", "airbnb-base", "google", "prettier"],
+  "overrides": [
+    {
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@typescript-eslint/strict"
+      ],
+      "files": ["**/*.{ts}"],
+      "rules": {}
+    },
+
+    {
+      "extends": [],
+      "files": "**/*.test.ts",
+      "rules": {
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-call": "off"
+      }
+    },
+
+    {
+      "extends": ["plugin:jsonc/recommended-with-json"],
+      "files": "**/*.json",
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "jsonc/sort-keys": "error"
+      }
+    },
+
+    {
+      "extends": ["plugin:markdown/recommended"],
+      "files": "**/*.md",
+      "rules": {}
+    }
+  ],
+
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "."
+  },
+
+  "plugins": ["html", "markdown", "@typescript-eslint"],
+  "ignorePatterns": ["!.*", "dist"],
+  "rules": {
+    "no-console": "off",
+    "no-param-reassign": "off",
+    "require-jsdoc": "off"
+  }
+}
